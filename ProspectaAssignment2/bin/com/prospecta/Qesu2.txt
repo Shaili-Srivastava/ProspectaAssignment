@@ -1,0 +1,54 @@
+Question :  Suppose you have a CSV file with the data below.
+
+A1: 5, A2: 7, A3: 9, B1: 3, B2: 8, B3: =4+5, C1: =5+A1, C2: =A2+B2, C3: =C2+B3
+
+This can be represented in an excel sheet below:
+
+A B C
+
+1 5 3 =5+A1
+
+2 7 8 =A2+B2
+
+3 9 =4+5 =C2+B3
+
+I want a program that will take the CSV input above and produce CSV output
+with the results. If it is a value, then return a value. If it is a formula then
+ calculate the formula and return the value of that formula
+
+
+
+ Question 1 :  How will you tackle the challenge above?
+
+ Ans :  Firstly I will take input with use of scanner .
+ -> Then  I will Split the String where there are "," 
+ -> Now I will create a LinkedHashMap to store the key-value pairs Key will be the cell and the value will be the value contained in the cell
+ -> Now I will take each String from the split array then I again split the string with ':';
+ -> The first value will be my cell and the second string will be my mathematical value or expression which will be in map in the hash map
+ -> Then I will check the the cell is valid or not also the value is num or not if this fails  then I will return invalid input.
+ -> Now will get all entries in the hash map in a set and Iterate over the map I will again go further and break the problem I will separate the entries which the mathematical expression and value which have an integer value will be mapped in another hash map string a key and integer key and remove it from the current hash map 
+ -> Entries that have mathematical expressions will be solved so I will go to one entry and solve that if I get a cell that is yet to be calculated then I will calculate that with DFS if I get a cell that is empty then that will be an exception cause there is no value
+
+As the value will be calculate I will remove it from the hash map and add it another answer hash map 
+If all is gone well then all the key-value pairs will be stored in CSV file
+Input of csv file is 
+A1: 5, A2: 7, A3: 9, B1: 3, B2: 8, B3: =4+5, C1: =5+A1, C2: =A2+B2, C3: =C2+B3
+Output of csv file is 
+A1: 5, A2: 7, A3: 9, B1: 3, B2: 8, B3: 9, C1: 10, C2: 15, C3: =24
+
+Question 2 :  What type of errors you would you check for?
+
+Ans- NAN error can be occurs.
+    Arithmetic Exception.
+    Bad operand 
+    Number format
+    Valid cell
+    Valid Expression
+
+
+Question 3 : How might a user break your code?
+
+ Ans : By passing first word as a integer which is irrelevant type of data
+there might be chance of circular dependency error because in the formula A is dependent on C and C is dependent on A .
+
+

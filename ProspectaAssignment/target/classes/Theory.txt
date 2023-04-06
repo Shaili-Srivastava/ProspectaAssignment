@@ -1,0 +1,24 @@
+Question =>  Question: what are the key things you would consider when creating/consuming an API to ensure
+             that it is secure and reliable?
+
+
+Answer :   There are few key point which you should follow when we are creating or consuming a api like this:-
+
+
+1. Authentication  Any of our application should has the feature of authentication for the the purpose of
+                        accessing our APIs by the user.
+
+
+2. Authorization This is also important feature which should be there in any web-services. No one who is not
+                     authorized person should not have access to changing any data form database.
+
+
+3. Validation It is also a important thing which will allow to user to fill the data for posting according
+                  our validations of APIs.
+
+
+ 4. Encryption  So this is a important part of a application that means all the sensitive data should be
+                   encrypted inside our application.
+
+
+           
